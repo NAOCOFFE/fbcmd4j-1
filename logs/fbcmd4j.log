@@ -1,0 +1,3 @@
+2017-11-06 11:40:11.796 [main] INFO  org.fbcmd4j.Main - Iniciando app
+2017-11-06 11:40:11.834 [main] INFO  org.fbcmd4j.Utils - La propiedad 'oauth.appId' esta vacía
+2017-11-06 11:40:11.834 [main] INFO  org.fbcmd4j.Utils - La propiedad 'oauth.appSecret' esta vacía
