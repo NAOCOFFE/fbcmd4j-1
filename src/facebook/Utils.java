@@ -53,4 +53,10 @@ public static void postStatus(String msg, Facebook fb) {
 		catch (FacebookException e) {logger.error(e);}		
 	}
 	
+	public static void postLink(String link, Facebook fb) {
+		try {fb.postLink(new URL(link));} 
+		catch (MalformedURLException e) {logger.error(e);} 
+		catch (FacebookException e) {
+		logger.error(e);}
+	}
 }
