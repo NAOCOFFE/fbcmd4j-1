@@ -47,6 +47,10 @@ public class Utils {
 			System.out.println("Mensaje: " + p.getMessage());}
 		System.out.println("--------------------------------");
 	}
-
+	
+public static void postStatus(String msg, Facebook fb) {
+		try {fb.postStatusMessage(msg);} 
+		catch (FacebookException e) {logger.error(e);}		
+	}
 	
 }
