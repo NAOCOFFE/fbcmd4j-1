@@ -32,7 +32,21 @@ public class Utils {
 		logger.info("La propiedad '" + k + "' esta vacía");};
 		props.forEach(emptyProperty);
 		return props;}
+		
+	public static Facebook configFacebook(Properties props) {
+		Facebook fb = new FacebookFactory().getInstance();
+		fb.setOAuthAppId(props.getProperty("oauth.appId"), props.getProperty("oauth.appSecret"));
+		fb.setOAuthPermissions(props.getProperty("oauth.permissions"));
+		fb.setOAuthAccessToken(new AccessToken(props.getProperty("oauth.accessToken"), null));
+		return fb;}
 	
+	public static void printPost(Post p) {
+		if(p.getStory() != null){
+			System.out.println("Story: " + p.getStory());}
+		if(p.getMessage() != null){
+			System.out.println("Mensaje: " + p.getMessage());}
+		System.out.println("--------------------------------");
+	}
 
 	
 }
