@@ -15,7 +15,7 @@ import facebook4j.ResponseList;
 
 public class Main {
 	static final Logger logger = LogManager.getLogger(Main.class);
-	// Recuerda cambiar el path antes de exportarlo sino, el jar requerirá un
+	// Recuerda cambiar el path antes de exportarlo sino, el jar requerirÃ¡ un
 	// directorio llamado config para guardar las configuraciones
 	private static final String CONFIG_DIR = "config";
 	private static final String CONFIG_FILE = "fbcmd4j.properties";
@@ -44,7 +44,7 @@ public class Main {
 				System.out.println("(3) Publicar Estado \n");
 				System.out.println("(4) Publicar Link \n");
 				System.out.println("(5) Salir \n\n");
-				System.out.println("Por favor ingrese una opción:");
+				System.out.println("Por favor ingrese una opciÃ³n:");
 				// Fin de Menu
 				try {
 					seleccion= scanner.nextInt();
@@ -81,17 +81,17 @@ public class Main {
 						System.exit(0);
 						break;
 					default:
-						logger.error("Opción inválida");
+						logger.error("OpciÃ³n invÃ¡lida");
 						break;
 					}
 				} catch (InputMismatchException ex) {
-					System.out.println("Ocurrió un errror, favor de revisar log.");
-					logger.error("Opción inválida. %s. \n", ex.getClass());
+					System.out.println("OcurriÃ³ un errror, favor de revisar log.");
+					logger.error("OpciÃ³n invÃ¡lida. %s. \n", ex.getClass());
 				} catch (FacebookException ex) {
-					System.out.println("Ocurrió un errror, favor de revisar log.");
+					System.out.println("OcurriÃ³ un errror, favor de revisar log.");
 					logger.error(ex.getErrorMessage());
 				} catch (Exception ex) {
-					System.out.println("Ocurrió un errror, favor de revisar log.");
+					System.out.println("OcurriÃ³ un errror, favor de revisar log.");
 					logger.error(ex);
 					
 				}
@@ -104,32 +104,25 @@ public class Main {
 	
 	
 	public static void SV(String fileName, ResponseList<Post> posts, Scanner scanner) {
-		System.out.println("¿Quieres guardar lo mostrado en un archivo txt?");
-		String seleccion= scanner.nextLine();
-		
-		if (seleccion.contains("Si") || seleccion.contains("si")) {
-			List<Post> post = new ArrayList<>();
-			int num = 0;
-
-			while(num <= 0) {
-				try {
-					System.out.println("¿Cuantas lineas quieres guaradar?");
-					num = Integer.parseInt(scanner.nextLine());					
-			
-					if(num <= 0) {
-						System.out.println("Ingrese un numero valido!!!!!");
-					} else {
-						for(int i = 0; i<num; i++) {
-							if(i>posts.size()-1) break;
-							post.add(posts.get(i));
-						}
-					}
-				} catch(NumberFormatException e) {
-					logger.error(e);
-				}
-			}
-
-			Utils.SP(fileName, post);
+	System.out.println("Â¿Quieres guardar lo mostrado en un archivo txt?");
+	String seleccion= scanner.nextLine();
+	if (seleccion.contains("Si") || seleccion.contains("si")) {
+		List<Post> post = new ArrayList<>();
+		int num = 0;
+		while(num <= 0) {
+		try {
+		System.out.println("Â¿Cuantas lineas quieres guaradar?");
+		num = Integer.parseInt(scanner.nextLine());					
+		if(num <= 0) {System.out.println("Ingrese un numero valido!!!!!");
+		} 
+		else {for(int i = 0; i<num; i++){
+		if(i>posts.size()-1) break;
+		post.add(posts.get(i));}}} 
+		catch(NumberFormatException e) {
+		logger.error(e);
 		}
-	}
-}
+		}
+		Utils.SP(fileName, post);
+		}
+		}
+		}
