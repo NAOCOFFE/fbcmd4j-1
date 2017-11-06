@@ -20,5 +20,6 @@
 		<Logger name="org.fbcmd4j.Utils" level="info">
 			<AppenderRef ref="Logfile" />
 		</Logger>
+		
 	</Loggers>
 </Configuration>
